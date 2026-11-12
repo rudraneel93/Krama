@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- PIM Column Check, Excel task-pane add-in.
-     Replace https://pim-rules.vercel.app/excel with the HTTPS host serving src/ before sideloading
+     Replace https://getkrama.vercel.app/excel with the HTTPS host serving src/ before sideloading
      or submitting. Generate a fresh <Id> GUID per publisher if this is forked. -->
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -13,11 +13,11 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Krama Column Check"/>
   <Description DefaultValue="Finds the rule an ordered column follows and highlights the rows that break it."/>
-  <IconUrl DefaultValue="https://pim-rules.vercel.app/excel/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://pim-rules.vercel.app/excel/icon-64.png"/>
-  <SupportUrl DefaultValue="https://pim-rules.vercel.app/docs#excel"/>
+  <IconUrl DefaultValue="https://getkrama.vercel.app/excel/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://getkrama.vercel.app/excel/icon-64.png"/>
+  <SupportUrl DefaultValue="https://getkrama.vercel.app/docs#excel"/>
   <AppDomains>
-    <AppDomain>https://pim-rules.vercel.app</AppDomain>
+    <AppDomain>https://getkrama.vercel.app</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Workbook"/>
@@ -28,7 +28,7 @@
     </Sets>
   </Requirements>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://pim-rules.vercel.app/excel/taskpane"/>
+    <SourceLocation DefaultValue="https://getkrama.vercel.app/excel/taskpane"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -68,12 +68,12 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="PIM.Icon16" DefaultValue="https://pim-rules.vercel.app/excel/icon-16.png"/>
-        <bt:Image id="PIM.Icon32" DefaultValue="https://pim-rules.vercel.app/excel/icon-32.png"/>
-        <bt:Image id="PIM.Icon80" DefaultValue="https://pim-rules.vercel.app/excel/icon-80.png"/>
+        <bt:Image id="PIM.Icon16" DefaultValue="https://getkrama.vercel.app/excel/icon-16.png"/>
+        <bt:Image id="PIM.Icon32" DefaultValue="https://getkrama.vercel.app/excel/icon-32.png"/>
+        <bt:Image id="PIM.Icon80" DefaultValue="https://getkrama.vercel.app/excel/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="PIM.PaneUrl" DefaultValue="https://pim-rules.vercel.app/excel/taskpane"/>
+        <bt:Url id="PIM.PaneUrl" DefaultValue="https://getkrama.vercel.app/excel/taskpane"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="PIM.GroupLabel" DefaultValue="Krama"/>

@@ -1,6 +1,6 @@
 # PIM pilot API
 
-Base URL: `https://pim-rules.vercel.app/api` (the hosted Krama API). JSON in, JSON out. Get a key at [pim-rules.vercel.app/app](https://pim-rules.vercel.app/app).
+Base URL: `https://getkrama.vercel.app/api` (the hosted Krama API). JSON in, JSON out. Get a key at [getkrama.vercel.app/app](https://getkrama.vercel.app/app).
 
 ## Authentication
 Send the API key as `X-API-Key: <key>` or `Authorization: Bearer <key>`.
@@ -131,7 +131,7 @@ Every response carries `X-Request-ID` (you may supply your own, alphanumeric, â‰
 ## Example
 
 ```bash
-curl -s https://pim-rules.vercel.app/api/v1/discover \
+curl -s https://getkrama.vercel.app/api/v1/discover \
   -H "X-API-Key: $PIM_API_KEY" -H "Content-Type: application/json" \
   -d '{"values": [3, 7, 15, 31, 63, 127, 255]}'
 ```

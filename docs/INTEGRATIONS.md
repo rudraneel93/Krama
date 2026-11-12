@@ -8,7 +8,7 @@ and get back the rule it follows and the rows that break it. Each break has a
 - `jump`: the sequence continues from a new value. For example, a missing
   invoice number, a repeated block, or a level shift.
 
-Set `PIM_API_KEY` (get one at [pim-rules.vercel.app/app](https://pim-rules.vercel.app/app)); `PIM_API_URL` is only needed for an enterprise self-hosted deployment.
+Set `PIM_API_KEY` (get one at [getkrama.vercel.app/app](https://getkrama.vercel.app/app)); `PIM_API_URL` is only needed for an enterprise self-hosted deployment.
 
 ## Python client (`clients/python`, package `pim-client`)
 
@@ -94,7 +94,7 @@ Behaviour:
 
 Setup:
 - Download [`integrations/excel/manifest.xml`](../integrations/excel/manifest.xml) (it points at the
-  hosted add-in on `pim-rules.vercel.app`).
+  hosted add-in on `getkrama.vercel.app`).
 - Excel on the web / Microsoft 365: **Home → Add-ins → My add-ins → Upload my add-in**. Organisation
   admins can deploy it to everyone from the Microsoft 365 admin centre.
 - Excel for Mac: copy it to `~/Library/Containers/com.microsoft.Excel/Data/Documents/wef/` and restart Excel.

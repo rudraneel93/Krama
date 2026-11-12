@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 from fractions import Fraction
 
 __version__ = "0.1.0"
-DEFAULT_URL = "https://pim-rules.vercel.app/api"  # the hosted Krama API; override with PIM_API_URL
+DEFAULT_URL = "https://getkrama.vercel.app/api"  # the hosted Krama API; override with PIM_API_URL
 MAX_VALUES = 1000
 
 

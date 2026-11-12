@@ -18,4 +18,4 @@ are used only after your plan's daily or monthly allowance runs out.
   `X-Quota-Remaining` and `X-Credits-Remaining`.
 - Billing is monthly in INR through Razorpay (cards, UPI, net banking); taxes as applicable.
 
-Start free at [pim-rules.vercel.app/app](https://pim-rules.vercel.app/app).
+Start free at [getkrama.vercel.app/app](https://getkrama.vercel.app/app).

@@ -7,8 +7,8 @@
 
 <br>
 
-[![Website](https://img.shields.io/badge/try_it-pim--rules.vercel.app-2ef2c8?style=for-the-badge&labelColor=0b0f19)](https://pim-rules.vercel.app)
-[![Free plan](https://img.shields.io/badge/free-10_checks_a_day-5aa9ff?style=for-the-badge&labelColor=0b0f19)](https://pim-rules.vercel.app/app)
+[![Website](https://img.shields.io/badge/try_it-pim--rules.vercel.app-2ef2c8?style=for-the-badge&labelColor=0b0f19)](https://getkrama.vercel.app)
+[![Free plan](https://img.shields.io/badge/free-10_checks_a_day-5aa9ff?style=for-the-badge&labelColor=0b0f19)](https://getkrama.vercel.app/app)
 [![Built in India](https://img.shields.io/badge/built_in-India-ff9f1c?style=for-the-badge&labelColor=0b0f19)](#)
 
 [![Python](https://img.shields.io/badge/python-3.10+-3776ab?logo=python&logoColor=white)](clients/python)
@@ -16,7 +16,7 @@
 [![Security](https://img.shields.io/badge/security-ZAP_·_Semgrep_·_Trivy_·_fuzzed-8b7cff)](SECURITY.md)
 [![License](https://img.shields.io/badge/license-Apache--2.0-626c7d)](LICENSE)
 
-**[Try it live](https://pim-rules.vercel.app/#demo)** · **[Start free](https://pim-rules.vercel.app/app)** · **[Docs](https://pim-rules.vercel.app/docs)** · **[Results](docs/PUBLIC_EVAL.md)** · **[What's in this repo](#whats-in-this-repo)**
+**[Try it live](https://getkrama.vercel.app/#demo)** · **[Start free](https://getkrama.vercel.app/app)** · **[Docs](https://getkrama.vercel.app/docs)** · **[Results](docs/PUBLIC_EVAL.md)** · **[What's in this repo](#whats-in-this-repo)**
 
 </div>
 
@@ -114,7 +114,7 @@ forecaster, and results on noisy data are experimental. Full methods: [docs/PUBL
 
 | You are… | Use | Time to first result |
 |---|---|---|
-| Anyone with a spreadsheet | **[Website workspace](https://pim-rules.vercel.app/app)** — upload CSV/Excel or paste | 1 minute |
+| Anyone with a spreadsheet | **[Website workspace](https://getkrama.vercel.app/app)** — upload CSV/Excel or paste | 1 minute |
 | An Excel user | **Excel add-in** — select a column, click *Check column* | 3 minutes |
 | A developer | **REST API** or **Python client** | 5 minutes |
 | A data team | **CLI in CI**, **Great Expectations**, **dbt** | 10 minutes |
@@ -123,7 +123,7 @@ forecaster, and results on noisy data are experimental. Full methods: [docs/PUBL
 <summary>🌐 <b>Website</b> — no install</summary>
 <br>
 
-1. Open **[pim-rules.vercel.app/app](https://pim-rules.vercel.app/app)** and sign in with the 6-digit code we email you.
+1. Open **[getkrama.vercel.app/app](https://getkrama.vercel.app/app)** and sign in with the 6-digit code we email you.
 2. **Check data** → drop a CSV/Excel file (or paste numbers).
 3. Pick the column, how rows are ordered, and optionally a group (e.g. branch).
 4. **Check** → rule in plain words, chart, every broken row with its sheet row number → **Download report**.
@@ -134,7 +134,7 @@ forecaster, and results on noisy data are experimental. Full methods: [docs/PUBL
 <summary>📊 <b>Excel add-in</b></summary>
 <br>
 
-1. Download the [manifest](https://pim-rules.vercel.app/excel/manifest.xml).
+1. Download the [manifest](https://getkrama.vercel.app/excel/manifest.xml).
 2. Excel → **Home → Add-ins → My add-ins → Upload my add-in** (Mac: copy it to
    `~/Library/Containers/com.microsoft.Excel/Data/Documents/wef/`).
 3. Open **Check column**, paste your API key under Settings, select a column, press **Check**.
@@ -147,7 +147,7 @@ forecaster, and results on noisy data are experimental. Full methods: [docs/PUBL
 <br>
 
 ```bash
-curl https://pim-rules.vercel.app/api/v1/check \
+curl https://getkrama.vercel.app/api/v1/check \
   -H "X-API-Key: $KRAMA_KEY" -H "Content-Type: application/json" \
   -d '{"values": [5011, 5012, 5013, 5015, 5016, 5017, 5018, 5019, 5020, 5021]}'
 ```
@@ -239,7 +239,7 @@ This repository holds everything you need to **use** Krama, released under the
 | [`docs/readme`](docs/readme) · [`scripts/readme_art.py`](scripts/readme_art.py) | the animated artwork in this README and its generator |
 
 **Open vs. hosted.** The clients, add-in, docs and evaluation write-ups are open source. The PIM engine and
-the hosted service are proprietary and run at [pim-rules.vercel.app](https://pim-rules.vercel.app);
+the hosted service are proprietary and run at [getkrama.vercel.app](https://getkrama.vercel.app);
 enterprise self-hosting is available on request. “Krama” and the Krama logo are trademarks of Rudraneel Das.
 
 <details>
@@ -261,7 +261,7 @@ flowchart LR
 
 ```bash
 pip install "git+https://github.com/rudraneel93/Krama.git#subdirectory=clients/python"
-export PIM_API_KEY=pim_...                       # from pim-rules.vercel.app/app
+export PIM_API_KEY=pim_...                       # from getkrama.vercel.app/app
 pim-check invoices.csv --column invoice_no --order-by invoice_no
 ```
 
