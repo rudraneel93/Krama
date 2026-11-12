@@ -1,0 +1,8 @@
+line-length = 120
+target-version = "py310"
+
+[lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[lint.per-file-ignores]
+"scripts/readme_art.py" = ["E501"]

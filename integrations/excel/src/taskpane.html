@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://appsforoffice.microsoft.com; connect-src 'self' https:; style-src 'self'; img-src 'self' data:">
+  <title>Krama Column Check</title>
+  <link rel="stylesheet" href="taskpane.css">
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script src="logic.js"></script>
+  <script src="taskpane.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Column check</h1>
+    <p class="hint">Select one column of numbers in the order they should follow, then press Check.</p>
+    <button id="check" class="primary" disabled>Check selected column</button>
+    <button id="clear" disabled>Clear highlights</button>
+    <section id="result" aria-live="polite"></section>
+    <details id="settings">
+      <summary>Settings</summary>
+      <label>API key <input id="key" type="password" autocomplete="off" spellcheck="false"></label>
+      <label>API URL <input id="url" type="url" spellcheck="false"></label>
+      <button id="save">Save</button>
+      <p class="hint">The key is stored in this add-in's local storage on this computer.</p>
+    </details>
+  </main>
+</body>
+</html>

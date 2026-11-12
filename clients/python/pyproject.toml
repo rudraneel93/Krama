@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pim-client"
+version = "0.1.0"
+description = "Krama client: check that ordered columns follow a rule and find the rows that break it."
+requires-python = ">=3.10"
+dependencies = []
+license = { text = "Apache-2.0" }
+classifiers = ["License :: OSI Approved :: Apache Software License", "Programming Language :: Python :: 3"]
+
+[project.optional-dependencies]
+pandas = ["pandas>=1.5"]
+gx = ["great_expectations>=1.0,<2"]
+
+[project.scripts]
+pim-check = "pim_client.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

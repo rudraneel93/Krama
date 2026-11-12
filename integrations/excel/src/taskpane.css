@@ -1,0 +1,19 @@
+:root { --fg: #1b1b1b; --muted: #5c5c5c; --bg: #ffffff; --accent: #0f6b5f; --bad: #b3261e; --line: #d9d9d9; }
+@media (prefers-color-scheme: dark) {
+  :root { --fg: #f0f0f0; --muted: #b5b5b5; --bg: #1f1f1f; --accent: #5cc3b2; --bad: #ff8a80; --line: #3a3a3a; }
+}
+body { margin: 0; font: 14px/1.45 "Segoe UI", system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+main { padding: 16px; }
+h1 { font-size: 18px; margin: 0 0 8px; }
+.hint { color: var(--muted); font-size: 12px; }
+button { font: inherit; padding: 6px 12px; margin: 4px 4px 4px 0; border: 1px solid var(--line); border-radius: 4px; background: transparent; color: var(--fg); cursor: pointer; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button:disabled { opacity: .5; cursor: default; }
+#result { margin: 12px 0; }
+#result .rule { font-family: ui-monospace, Menlo, monospace; }
+#result ul { padding-left: 18px; }
+#result a { color: var(--accent); cursor: pointer; }
+#result .error { color: var(--bad); }
+label { display: block; margin: 8px 0; font-size: 12px; }
+input { display: block; width: 100%; box-sizing: border-box; padding: 6px; margin-top: 2px; border: 1px solid var(--line); border-radius: 4px; background: transparent; color: var(--fg); font: inherit; }
+details { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 8px; }
