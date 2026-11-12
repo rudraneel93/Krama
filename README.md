@@ -11,6 +11,9 @@
 [![Free plan](https://img.shields.io/badge/free-10_checks_a_day-5aa9ff?style=for-the-badge&labelColor=0b0f19)](https://getkrama.vercel.app/app)
 [![Built in India](https://img.shields.io/badge/built_in-India-ff9f1c?style=for-the-badge&labelColor=0b0f19)](#)
 
+[![Hugging Face Space](https://img.shields.io/badge/🤗_play-spot_the_error-ffcc4d?style=for-the-badge&labelColor=0b0f19)](https://huggingface.co/spaces/Rudraneel93/krama)
+[![BreakBench](https://img.shields.io/badge/🤗_dataset-BreakBench-8b7cff?style=for-the-badge&labelColor=0b0f19)](https://huggingface.co/datasets/Rudraneel93/krama-breakbench)
+
 [![Python](https://img.shields.io/badge/python-3.10+-3776ab?logo=python&logoColor=white)](clients/python)
 [![CI](https://github.com/rudraneel93/Krama/actions/workflows/ci.yml/badge.svg)](https://github.com/rudraneel93/Krama/actions/workflows/ci.yml)
 [![Security](https://img.shields.io/badge/security-ZAP_·_Semgrep_·_Trivy_·_fuzzed-8b7cff)](SECURITY.md)
@@ -109,6 +112,22 @@ Every figure comes from held-out public data; Krama was never trained on any of 
 On the 200-sequence comparison Krama answered 11 times and said “no rule” for the rest.
 **Honest limits:** it recognises common rule types (not every possible pattern), it is not a
 forecaster, and results on noisy data are experimental. Full methods: [docs/PUBLIC_EVAL.md](docs/PUBLIC_EVAL.md).
+
+## BreakBench: do AI models see patterns that aren't there?
+
+A public benchmark of 1,200 hidden test sequences (correct, broken, missing, duplicated, pure noise, and real
+rules outside the usual families). The headline metric is the **phantom-pattern rate**: how often a system
+invents a rule in random numbers.
+
+| System | Exact | Phantom patterns ↓ | Break F1 | False alarms ↓ | “Beyond” |
+|---|---:|---:|---:|---:|---:|
+| **Krama** | **83.3%** | **0%** | **1.00** | **0%** | 0% |
+| Always says “follows a rule” | 33.3% | 100% | 0.00 | 0% | 100% |
+| Spreadsheet-style step check | 21.3% | 0% | 0.14 | 86% | 0% |
+
+Krama scores 0% on “beyond” (primes, Catalan numbers…): it says “no rule” rather than guess.
+**[Dataset & submission](https://huggingface.co/datasets/Rudraneel93/krama-breakbench)** ·
+**[Play “spot the error”](https://huggingface.co/spaces/Rudraneel93/krama)** · source of both in [`huggingface/`](huggingface).
 
 ## Choose how you use it
 
@@ -236,6 +255,7 @@ This repository holds everything you need to **use** Krama, released under the
 | [`clients/python`](clients/python) | `pim-client`: Python client (standard library only), the `pim-check` CLI for CSV and CI, pandas helper, Great Expectations expectation |
 | [`integrations/excel`](integrations/excel) | Excel task-pane add-in: select a column, click *Check column* |
 | [`docs`](docs) | API reference, integrations, pricing, public evaluation |
+| [`huggingface`](huggingface) | the Hugging Face Space (demo + game + leaderboard) and the BreakBench dataset card and scorer |
 | [`docs/readme`](docs/readme) · [`scripts/readme_art.py`](scripts/readme_art.py) | the animated artwork in this README and its generator |
 
 **Open vs. hosted.** The clients, add-in, docs and evaluation write-ups are open source. The PIM engine and

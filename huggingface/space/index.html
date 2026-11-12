@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Krama — find the broken number</title>
+  <meta name="description" content="Paste a column of numbers. Krama finds the rule and every number that breaks it. Play spot-the-error and see the BreakBench leaderboard.">
+  <link rel="icon" href="krama-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Sora:wght@600;700&family=Syne:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <main class="shell">
+    <header class="top">
+      <a class="brand" href="https://getkrama.vercel.app" target="_blank" rel="noopener">
+        <img src="krama-mark.svg" alt="" width="40" height="40"><span>krama</span>
+      </a>
+      <p class="tagline">Every number, <b>in its place.</b></p>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button role="tab" class="tab active" data-tab="try" aria-selected="true">Try it</button>
+      <button role="tab" class="tab" data-tab="game" aria-selected="false">Spot the error <span class="pill">game</span></button>
+      <button role="tab" class="tab" data-tab="board" aria-selected="false">Leaderboard</button>
+      <span class="tab-ink" aria-hidden="true"></span>
+    </nav>
+
+    <!-- TRY IT -->
+    <section class="panel active" data-panel="try" role="tabpanel">
+      <p class="intro">Paste numbers that should follow a pattern — invoice numbers, a fee table, readings. Krama finds the rule and every number that breaks it.</p>
+      <div class="chips" role="group" aria-label="Examples">
+        <button class="chip active" data-ex="invoices">🧾 Invoices, one missing</button>
+        <button class="chip" data-ex="fees">₹ Fee table typo</button>
+        <button class="chip" data-ex="double">×2 Doubling slip</button>
+        <button class="chip" data-ex="cycle">↻ Weekly cycle</button>
+        <button class="chip" data-ex="random">🎲 Random</button>
+      </div>
+      <div class="try-grid">
+        <div class="card input-card">
+          <label for="nums">Your numbers, in order</label>
+          <textarea id="nums" rows="5" spellcheck="false"></textarea>
+          <button class="go" id="go">Find the rule <span>→</span></button>
+          <p class="hint" id="meta">Tip: ⌘/Ctrl + Enter</p>
+        </div>
+        <div class="card out-card">
+          <svg class="chart" id="chart" viewBox="0 0 600 240" preserveAspectRatio="none" aria-label="Your numbers and the rule"></svg>
+          <div id="out" class="out" aria-live="polite"><p class="muted">Your result appears here.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section class="panel" data-panel="game" role="tabpanel" hidden>
+      <div class="game-head">
+        <div>
+          <h2>Spot the error</h2>
+          <p class="muted">Tap the number that breaks the pattern — or decide the sequence is <b>all correct</b>, or has <b>no pattern</b> at all.</p>
+        </div>
+        <div class="scores">
+          <div><b id="score">0</b><span>score</span></div>
+          <div><b id="streak">0</b><span>streak 🔥</span></div>
+          <div><b id="round">1</b><span>of 10</span></div>
+        </div>
+      </div>
+      <div class="card game-card">
+        <div class="tiles" id="tiles"></div>
+        <div class="choices">
+          <button class="choice ok" id="allOk">✓ All correct</button>
+          <button class="choice none" id="noPat">∅ No pattern</button>
+        </div>
+        <div class="reveal" id="reveal" aria-live="polite"></div>
+        <button class="go next" id="next" hidden>Next puzzle <span>→</span></button>
+      </div>
+      <div class="card done" id="done" hidden>
+        <h2 id="doneTitle"></h2>
+        <p class="muted" id="doneText"></p>
+        <div class="done-actions">
+          <button class="go" id="again">Play again</button>
+          <a class="ghost" href="https://getkrama.vercel.app/app" target="_blank" rel="noopener">Check your own data free →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERBOARD -->
+    <section class="panel" data-panel="board" role="tabpanel" hidden>
+      <h2>Do AI models see patterns that aren't there?</h2>
+      <p class="muted">BreakBench: 1,200 hidden test sequences — correct, broken, missing, duplicated, pure noise, and real rules outside the usual families. <a href="https://huggingface.co/datasets/Rudraneel93/krama-breakbench" target="_blank" rel="noopener">Dataset &amp; how to submit →</a></p>
+      <div class="board-grid">
+        <div class="card"><h3>Invents a rule in pure noise <span class="muted">↓ lower is better</span></h3><div class="bars" id="barsPhantom"></div></div>
+        <div class="card"><h3>Exactly right overall <span class="muted">↑ higher is better</span></h3><div class="bars" id="barsExact"></div></div>
+      </div>
+      <div class="card table-card">
+        <table class="lb" id="lb">
+          <thead><tr><th>System</th><th>Exact</th><th>Phantom ↓</th><th>Break F1</th><th>False alarms ↓</th><th>“Beyond”</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="hint">Read it fairly: Krama is built for six common rule families, so it scores 0% on the “beyond” category (primes, Catalan numbers…) — it says “no rule” rather than guess. Models that know those sequences can beat it there. Your model here? Submit predictions on the dataset page.</p>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <a href="https://getkrama.vercel.app" target="_blank" rel="noopener">getkrama.vercel.app</a>
+      <a href="https://github.com/rudraneel93/Krama" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://huggingface.co/datasets/Rudraneel93/krama-breakbench" target="_blank" rel="noopener">BreakBench dataset</a>
+      <span>Built in India</span>
+    </footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "benchmark": "Krama BreakBench v1",
+  "split": "test",
+  "results": [
+    {
+      "exact_accuracy": 0.8325,
+      "phantom_pattern_rate": 0.0,
+      "break_precision": 0.9985,
+      "break_recall": 0.9985,
+      "break_f1": 0.9985,
+      "clean_false_alarm_rate": 0.0,
+      "by_category": {
+        "clean": 1.0,
+        "value": 0.995,
+        "gap": 1.0,
+        "duplicate": 1.0,
+        "noise": 1.0,
+        "beyond": 0.0
+      },
+      "n": 1200,
+      "system": "Krama (PIM engine)",
+      "seconds": 32.0
+    },
+    {
+      "exact_accuracy": 0.3333,
+      "phantom_pattern_rate": 1.0,
+      "break_precision": 0.0,
+      "break_recall": 0.0,
+      "break_f1": 0.0,
+      "clean_false_alarm_rate": 0.0,
+      "by_category": {
+        "clean": 1.0,
+        "value": 0.0,
+        "gap": 0.0,
+        "duplicate": 0.0,
+        "noise": 0.0,
+        "beyond": 1.0
+      },
+      "n": 1200,
+      "system": "Always says 'follows a rule'",
+      "seconds": 0.0
+    },
+    {
+      "exact_accuracy": 0.2133,
+      "phantom_pattern_rate": 0.0,
+      "break_precision": 0.5714,
+      "break_recall": 0.0802,
+      "break_f1": 0.1407,
+      "clean_false_alarm_rate": 0.86,
+      "by_category": {
+        "clean": 0.14,
+        "value": 0.14,
+        "gap": 0.0,
+        "duplicate": 0.0,
+        "noise": 1.0,
+        "beyond": 0.0
+      },
+      "n": 1200,
+      "system": "Constant-step check (spreadsheet-style)",
+      "seconds": 0.0
+    }
+  ]
+}

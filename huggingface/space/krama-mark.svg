@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Krama">
+  <!-- Krama mark: an abstract K. Stem and arm = the rule; the faint leg = where the value belongs;
+       the saffron dot = the value that slipped out of order, caught. -->
+  <defs>
+    <linearGradient id="kbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16203a"/><stop offset="1" stop-color="#05070d"/>
+    </linearGradient>
+    <linearGradient id="krule" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#2ef2c8"/><stop offset=".55" stop-color="#4fb3ff"/><stop offset="1" stop-color="#9b84ff"/>
+    </linearGradient>
+    <radialGradient id="kbrk" cx=".38" cy=".35" r=".75">
+      <stop offset="0" stop-color="#ffd27a"/><stop offset=".55" stop-color="#ff9f1c"/><stop offset="1" stop-color="#ff6a00"/>
+    </radialGradient>
+    <filter id="kglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="url(#kbg)"/>
+  <rect x=".75" y=".75" width="62.5" height="62.5" rx="16.4" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1.5"/>
+  <rect x="15" y="13" width="7.5" height="38" rx="3.75" fill="url(#krule)"/>
+  <path d="M25 34.5 L46.5 13" stroke="url(#krule)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M30.5 30.5 L41 41" stroke="#9fb4ff" stroke-opacity=".22" stroke-width="7.5" stroke-linecap="round"/>
+  <circle cx="45.5" cy="48" r="6.2" fill="url(#kbrk)" filter="url(#kglow)"/>
+</svg>
