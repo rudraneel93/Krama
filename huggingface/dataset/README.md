@@ -97,7 +97,7 @@ phantom-pattern rate: how often does a system invent a rule in random numbers?
    `{"id": "test-0000", "status": "rule_with_breaks", "breaks": [7]}`
 2. Check the format and your practice score: `python score.py --answers practice.jsonl --predictions my_practice.jsonl`
 3. Open a **Discussion** on this dataset with your test predictions attached (or email
-   mastyf.support@gmail.com). We score it against the hidden answers and add it to the leaderboard.
+   rudraneel93@gmail.com). We score it against the hidden answers and add it to the leaderboard.
 
 Please describe the system (model, prompt, tools) so results are comparable.
 

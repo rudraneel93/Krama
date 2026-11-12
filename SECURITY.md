@@ -1,7 +1,7 @@
 # Security
 
 ## Reporting a vulnerability
-Please report security issues privately to **mastyf.support@gmail.com** with "Krama security" in the
+Please report security issues privately to **rudraneel93@gmail.com** with "Krama security" in the
 subject. Do not open a public issue. We aim to reply within 3 working days.
 
 ## How the hosted service protects your data
